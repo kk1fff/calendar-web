@@ -3,7 +3,7 @@ var child_process = require('child_process');
 exports.produceImage = function(year, month, img_abs_path, outputFormat) {
   var p = child_process.spawn(
     process.env.PYTHON2 || "python",
-    [__dirname + "/../image_processor/easy-cal.py",
+    [process.env.CALENDAR_IMG_PROCESSOR + "/easy-cal.py",
      '-stdout',
      '' + year,
      '' + month,
